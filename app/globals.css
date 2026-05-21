@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #070710;
+  --color-surface: #0d0d1e;
+  --color-elevated: #131328;
+  --color-border: #1c1c38;
+  --color-border-bright: #2a2a50;
+  --color-accent: #7c4dff;
+  --color-accent-dim: #5a35cc;
+  --color-accent-light: #a87fff;
+  --color-cyan: #00d9ff;
+  --color-cyan-dim: #0099bb;
+  --color-text: #e0e0f0;
+  --color-muted: #5e5e7a;
+  --color-subtle: #3a3a58;
+
+  --font-heading: var(--font-syne);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #070710;
+  color: #e0e0f0;
+  font-family: var(--font-space-grotesk, "Space Grotesk", system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #070710;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a50;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7c4dff;
+}
+
+::selection {
+  background: rgba(124, 77, 255, 0.3);
+  color: #e0e0f0;
+}
+
+/* ── Typography utilities ── */
+.gradient-text {
+  background: linear-gradient(135deg, #e0e0f0 0%, #c8a8ff 45%, #00d9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #a87fff 0%, #7c4dff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Background patterns ── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(124, 77, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 77, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Floating orb animations ── */
+@keyframes float-a {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  35% { transform: translate(28px, -42px) scale(1.04); }
+  70% { transform: translate(-18px, 18px) scale(0.96); }
+}
+@keyframes float-b {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  40% { transform: translate(-32px, 28px) scale(1.03); }
+  75% { transform: translate(22px, -22px) scale(0.97); }
+}
+
+.orb-a { animation: float-a 22s ease-in-out infinite; }
+.orb-b { animation: float-b 28s ease-in-out infinite; }
+.orb-c { animation: float-a 18s ease-in-out infinite reverse; }
+
+/* ── Glow effects ── */
+.glow-accent {
+  box-shadow: 0 0 40px rgba(124, 77, 255, 0.25), 0 0 80px rgba(124, 77, 255, 0.1);
+}
+.glow-cyan {
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.2), 0 0 80px rgba(0, 217, 255, 0.08);
+}
+
+/* ── Card hover gradient border ── */
+.card-border {
+  position: relative;
+  border: 1px solid #1c1c38;
+  transition: border-color 0.3s ease;
+}
+.card-border:hover {
+  border-color: rgba(124, 77, 255, 0.4);
+  box-shadow: 0 8px 40px rgba(124, 77, 255, 0.12), 0 0 0 1px rgba(124, 77, 255, 0.1);
+}
+
+/* ── Timeline connector ── */
+.timeline-line {
+  background: linear-gradient(to bottom, #7c4dff, #1c1c38);
+}
+
+/* ── Skill pill hover ── */
+.skill-pill {
+  transition: all 0.2s ease;
+}
+.skill-pill:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Button styles ── */
+.btn-primary {
+  background: linear-gradient(135deg, #7c4dff, #5a35cc);
+  color: white;
+  border: 1px solid rgba(168, 127, 255, 0.3);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #a87fff, #7c4dff);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary:hover { box-shadow: 0 8px 30px rgba(124, 77, 255, 0.4); transform: translateY(-1px); }
+.btn-primary span { position: relative; z-index: 1; }
+
+.btn-ghost {
+  background: transparent;
+  color: #e0e0f0;
+  border: 1px solid #1c1c38;
+  transition: all 0.25s ease;
+}
+.btn-ghost:hover {
+  border-color: rgba(124, 77, 255, 0.5);
+  color: #a87fff;
+  background: rgba(124, 77, 255, 0.05);
+}
+
+/* ── Section header underline ── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-jetbrains, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #7c4dff;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: #7c4dff;
+}
