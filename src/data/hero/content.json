@@ -1,0 +1,28 @@
+{
+  "name": "Akash Moses Guttedar",
+  "tagline": "Senior engineer for secure, high-scale backend systems.",
+  "availability": "Available for US-based SWE roles on OPT",
+  "description": "SDE II at JPMorgan Chase with 4.5 years of backend engineering experience across IAM, Spring Boot microservices, AWS migrations, Kubernetes delivery, and enterprise observability.",
+  "primaryCta": "View Experience",
+  "secondaryCta": "Get in Touch",
+  "impactCompany": "JPMorgan Chase",
+  "impactRole": "Software Engineer I and II, 2020-2024",
+  "impactBadge": "SDE II",
+  "focusAreas": [
+    { "icon": "server", "label": "Distributed systems" },
+    { "icon": "shield", "label": "IAM and security" },
+    { "icon": "database", "label": "Data migration" },
+    { "icon": "briefcase", "label": "Enterprise delivery" }
+  ],
+  "stats": [
+    { "value": "4+", "label": "Years at JPMC" },
+    { "value": "1M+", "label": "Daily auth requests" },
+    { "value": "99%", "label": "Availability" },
+    { "value": "500+", "label": "Vulnerabilities fixed" }
+  ],
+  "evidence": [
+    "Scaled access control and federation services across multi-region infrastructure.",
+    "Migrated 100K+ authentication records through encrypted Spring Boot ETL.",
+    "Reduced onboarding effort by 90% with a containerized internal portal."
+  ]
+}

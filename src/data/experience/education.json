@@ -1,0 +1,32 @@
+[
+  {
+    "degree": "MS Computer Engineering",
+    "school": "Texas A&M University",
+    "logo": "tamu",
+    "period": "Aug 2024 - May 2026",
+    "gpa": "GPA 3.8 / 4.0",
+    "coursework": [
+      "Machine Learning Engineering",
+      "Artificial Intelligence",
+      "Data Visualization",
+      "Data Mining & Analysis",
+      "Parallel Computing",
+      "Computer Architecture",
+      "Computer Communication & Networks"
+    ]
+  },
+  {
+    "degree": "B.Tech Electronics & Communication Engineering",
+    "school": "Jawaharlal Nehru Technological University",
+    "logo": "jntu",
+    "period": "Jul 2016 - Sept 2020",
+    "gpa": "GPA 9.8 / 10, Gold Medal",
+    "coursework": [
+      "Data Structures",
+      "Computer Networks",
+      "Operating Systems",
+      "Database Management Systems",
+      "Communication Systems"
+    ]
+  }
+]

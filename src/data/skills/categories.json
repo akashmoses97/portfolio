@@ -1,0 +1,97 @@
+[
+  {
+    "label": "Languages",
+    "icon": "code",
+    "skills": [
+      { "name": "Java",            "logo": "java",   "slug": "openjdk" },
+      { "name": "Python",          "logo": "py",     "slug": "python" },
+      { "name": "C++",             "logo": "cpp",    "slug": "cplusplus" },
+      { "name": "TypeScript",      "logo": "ts",     "slug": "typescript" },
+      { "name": "JavaScript",      "logo": "js",     "slug": "javascript" },
+      { "name": "SQL",             "logo": "sql" },
+      { "name": "Shell Scripting", "logo": "sh",     "slug": "gnubash" }
+    ]
+  },
+  {
+    "label": "Frameworks & APIs",
+    "icon": "layers",
+    "skills": [
+      { "name": "Spring Boot",     "logo": "sb",     "slug": "springboot" },
+      { "name": "Spring Security", "logo": "ss",     "slug": "springsecurity" },
+      { "name": "Spring Batch",    "logo": "sbatch", "slug": "spring" },
+      { "name": "FastAPI",         "logo": "fapi",   "slug": "fastapi" },
+      { "name": "ReactJS",         "logo": "react",  "slug": "react" },
+      { "name": "Apache Kafka",    "logo": "kafka",  "slug": "apachekafka" },
+      { "name": "REST APIs",       "logo": "api" },
+      { "name": "Microservices",   "logo": "ms" }
+    ]
+  },
+  {
+    "label": "Cloud & DevOps",
+    "icon": "cloud",
+    "skills": [
+      { "name": "AWS",             "logo": "aws",    "slug": "amazonwebservices" },
+      { "name": "Docker",          "logo": "dock",   "slug": "docker" },
+      { "name": "Kubernetes",      "logo": "k8s",    "slug": "kubernetes" },
+      { "name": "Jenkins",         "logo": "jen",    "slug": "jenkins" },
+      { "name": "Cloud Foundry",   "logo": "cf",     "slug": "cloudfoundry" },
+      { "name": "Apache Tomcat",   "logo": "cat",    "slug": "apachetomcat" },
+      { "name": "Liquibase",       "logo": "lb",     "slug": "liquibase" },
+      { "name": "CI/CD",           "logo": "ci" }
+    ]
+  },
+  {
+    "label": "Databases",
+    "icon": "database",
+    "skills": [
+      { "name": "Oracle DB",       "logo": "ora" },
+      { "name": "PostgreSQL",      "logo": "pg",     "slug": "postgresql" },
+      { "name": "MySQL",           "logo": "my",     "slug": "mysql" },
+      { "name": "Amazon Aurora",   "logo": "aur",    "slug": "amazonwebservices" },
+      { "name": "IBM DB2",         "logo": "db2",    "slug": "ibm" },
+      { "name": "Sybase",          "logo": "syb" },
+      { "name": "ADLDS",           "logo": "ad" }
+    ]
+  },
+  {
+    "label": "Identity & Access",
+    "icon": "shield",
+    "skills": [
+      { "name": "OAuth 2.0",          "logo": "oauth" },
+      { "name": "OIDC",               "logo": "oidc" },
+      { "name": "SAML / SSO",         "logo": "saml" },
+      { "name": "RBAC",               "logo": "rbac" },
+      { "name": "PingFederate",        "logo": "ping" },
+      { "name": "ADFS",               "logo": "adfs",    "slug": "microsoftazure" },
+      { "name": "Transmit Security",  "logo": "tsec" },
+      { "name": "CyberArk",           "logo": "cark" },
+      { "name": "KMS / Secrets",      "logo": "kms",     "slug": "amazonwebservices" }
+    ]
+  },
+  {
+    "label": "AI & LLM",
+    "icon": "cpu",
+    "skills": [
+      { "name": "HuggingFace",      "logo": "hf",     "slug": "huggingface" },
+      { "name": "Anthropic Claude", "logo": "ant",    "slug": "anthropic" },
+      { "name": "GitHub Copilot",   "logo": "cop",    "slug": "github" },
+      { "name": "LLM APIs",         "logo": "llm" },
+      { "name": "Prompt Eng.",      "logo": "prm" }
+    ]
+  },
+  {
+    "label": "Quality & Observability",
+    "icon": "activity",
+    "skills": [
+      { "name": "Splunk",      "logo": "spl",   "slug": "splunk" },
+      { "name": "AppDynamics", "logo": "appd",  "slug": "appdynamics" },
+      { "name": "Snyk",        "logo": "snyk",  "slug": "snyk" },
+      { "name": "SonarQube",   "logo": "sonar", "slug": "sonarqube" },
+      { "name": "JUnit",       "logo": "junit", "slug": "junit5" },
+      { "name": "Mockito",     "logo": "mck" },
+      { "name": "Git",         "logo": "git",   "slug": "git" },
+      { "name": "Jira",        "logo": "jira",  "slug": "jira" },
+      { "name": "Bitbucket",   "logo": "bit",   "slug": "bitbucket" }
+    ]
+  }
+]

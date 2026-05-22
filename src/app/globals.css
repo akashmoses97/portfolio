@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #f6f8fb;
+  --color-surface: #ffffff;
+  --color-elevated: #eef2f7;
+  --color-border: #d8e0ea;
+  --color-border-bright: #aab6c5;
+  --color-accent: #2563eb;
+  --color-accent-dim: #1d4ed8;
+  --color-accent-light: #1e40af;
+  --color-cyan: #0f766e;
+  --color-cyan-dim: #115e59;
+  --color-text: #111827;
+  --color-muted: #5b6472;
+  --color-subtle: #8994a3;
+
+  --font-heading: var(--font-inter);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f6f8fb;
+  color: #111827;
+  font-family: var(--font-inter, system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f6f8fb;
+}
+::-webkit-scrollbar-thumb {
+  background: #c6d0dc;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b98a9;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.18);
+  color: #111827;
+}
+
+/* ── Typography utilities ── */
+.gradient-text {
+  color: #1e40af;
+}
+
+.gradient-accent {
+  color: #1e40af;
+}
+
+/* ── Background patterns ── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(17, 24, 39, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 24, 39, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+/* ── Card hover treatment ── */
+.card-border {
+  position: relative;
+  border: 1px solid #d8e0ea;
+  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card-border:hover {
+  border-color: #aab6c5;
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
+}
+
+/* ── Timeline connector ── */
+.timeline-line {
+  background: linear-gradient(to bottom, #2563eb, #d8e0ea);
+}
+
+/* ── Skill pill hover ── */
+.skill-pill {
+  transition: all 0.2s ease;
+}
+.skill-pill:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Button styles ── */
+.btn-primary {
+  background: #1d4ed8;
+  color: white;
+  border: 1px solid #1d4ed8;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary:hover { background: #1e40af; border-color: #1e40af; box-shadow: 0 8px 18px rgba(29, 78, 216, 0.18); transform: translateY(-1px); }
+.btn-primary span { position: relative; z-index: 1; }
+
+.btn-ghost {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d8e0ea;
+  transition: all 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: #aab6c5;
+  color: #1d4ed8;
+  background: #f8fafc;
+}
+
+/* ── Section header underline ── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-jetbrains, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1d4ed8;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: #1d4ed8;
+}

@@ -4,39 +4,20 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, ArrowRight, Copy, Check } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import contact from "@/data/contact/contact.json";
+import labels from "@/data/sections/labels.json";
+import profile from "@/data/site/profile.json";
 
-const links = [
-  {
-    icon: <Mail size={18} />,
-    label: "Email",
-    value: "moses.ak1997@gmail.com",
-    href: "mailto:moses.ak1997@gmail.com",
-    copyable: true,
-  },
-  {
-    icon: <LinkedinIcon size={18} />,
-    label: "LinkedIn",
-    value: "linkedin.com/in/akash-moses",
-    href: "https://linkedin.com/in/akash-moses",
-    copyable: false,
-  },
-  {
-    icon: <GithubIcon size={18} />,
-    label: "GitHub",
-    value: "github.com/akashmoses97",
-    href: "https://github.com/akashmoses97",
-    copyable: false,
-  },
-  {
-    icon: <Phone size={18} />,
-    label: "Phone",
-    value: "(979) 344-4596",
-    href: "tel:+19793444596",
-    copyable: true,
-  },
-];
+type ContactLink = (typeof contact.links)[number];
 
-function CopyableLink({ item }: { item: typeof links[0] }) {
+const linkIcons = {
+  mail: <Mail size={18} />,
+  linkedin: <LinkedinIcon size={18} />,
+  github: <GithubIcon size={18} />,
+  phone: <Phone size={18} />,
+} as const;
+
+function CopyableLink({ item }: { item: ContactLink }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async (e: React.MouseEvent) => {
@@ -51,10 +32,10 @@ function CopyableLink({ item }: { item: typeof links[0] }) {
       href={item.href}
       target={item.href.startsWith("http") ? "_blank" : undefined}
       rel="noopener noreferrer"
-      className="group card-border bg-surface rounded-2xl p-5 flex items-center gap-4 hover:bg-elevated transition-all duration-200"
+      className="group card-border bg-surface rounded-lg p-5 flex items-center gap-4 hover:bg-elevated transition-all duration-200"
     >
-      <div className="w-10 h-10 rounded-xl bg-accent/[0.1] border border-accent/20 flex items-center justify-center text-accent-light flex-shrink-0">
-        {item.icon}
+      <div className="w-10 h-10 rounded-lg bg-elevated border border-border flex items-center justify-center text-accent flex-shrink-0">
+        {linkIcons[item.icon as keyof typeof linkIcons]}
       </div>
       <div className="flex-1 min-w-0">
         <p className="text-xs text-muted mb-0.5">{item.label}</p>
@@ -66,12 +47,12 @@ function CopyableLink({ item }: { item: typeof links[0] }) {
           className="p-1.5 rounded-lg text-muted hover:text-text hover:bg-border transition-all flex-shrink-0"
           aria-label="Copy"
         >
-          {copied ? <Check size={14} className="text-cyan" /> : <Copy size={14} />}
+          {copied ? <Check size={14} className="text-accent" /> : <Copy size={14} />}
         </button>
       ) : (
         <ArrowRight
           size={16}
-          className="text-muted group-hover:text-accent-light group-hover:translate-x-0.5 transition-all flex-shrink-0"
+          className="text-muted group-hover:text-accent group-hover:translate-x-0.5 transition-all flex-shrink-0"
         />
       )}
     </a>
@@ -90,15 +71,17 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-4"
         >
-          <p className="section-label mb-3">Contact</p>
+          <p className="section-label mb-3">{labels.contact}</p>
           <h2 className="font-heading font-bold text-4xl md:text-5xl text-text leading-tight mb-4">
-            Let's connect
+            {contact.headline}
           </h2>
-          <p className="text-base text-muted leading-relaxed max-w-xl">
-            I'm actively seeking US-based Software Engineering roles on OPT (available{" "}
-            <span className="text-cyan font-medium">May 2026</span>). Whether it's a full-time
-            role, contract, or just a conversation — I'd love to hear from you.
-          </p>
+          <div className="grid gap-3 text-sm text-muted sm:grid-cols-3">
+            {contact.chips.map((item) => (
+              <div key={item} className="rounded-lg border border-border bg-surface px-3 py-2">
+                {item}
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Status badge */}
@@ -109,15 +92,15 @@ export default function Contact() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="mb-10"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-cyan/30 bg-cyan/[0.06] text-cyan">
-            <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-            Open to opportunities · OPT · May 2026 · College Station, TX
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-accent/20 bg-accent/[0.06] text-accent">
+            <span className="w-2 h-2 rounded-full bg-accent" />
+            {contact.status}
           </span>
         </motion.div>
 
         {/* Contact links */}
         <div className="grid sm:grid-cols-2 gap-4">
-          {links.map((item, i) => (
+          {contact.links.map((item, i) => (
             <motion.div
               key={item.label}
               initial={{ opacity: 0, y: 20 }}
@@ -139,14 +122,14 @@ export default function Contact() {
           className="mt-10 pt-8 border-t border-border text-center"
         >
           <p className="text-sm text-muted">
-            Based in{" "}
-            <span className="text-text">College Station, Texas</span>
+            {contact.footerNote.locationPrefix}{" "}
+            <span className="text-text">{profile.location}</span>
             {" · "}
-            Authorized to work in the US on{" "}
-            <span className="text-accent-light font-medium">OPT</span>
+            <span className="text-accent font-medium">
+              {contact.footerNote.workAuthorization}
+            </span>
             {" · "}
-            Available{" "}
-            <span className="text-cyan font-medium">May 2026</span>
+            <span className="text-accent font-medium">{contact.footerNote.available}</span>
           </p>
         </motion.div>
       </div>

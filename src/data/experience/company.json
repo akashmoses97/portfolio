@@ -1,0 +1,14 @@
+{
+  "name": "JP Morgan Chase & Co.",
+  "logo": "jpmc",
+  "logoText": "JPMC",
+  "location": "India",
+  "roleRange": "Software Engineer Intern to Software Engineer II",
+  "headline": "Production engineering at JPMorgan Chase",
+  "stats": [
+    { "value": "4.5 yrs", "label": "enterprise engineering" },
+    { "value": "1M+/day", "label": "auth request scale" },
+    { "value": "99%", "label": "service availability" },
+    { "value": "3 roles", "label": "intern to SDE II" }
+  ]
+}

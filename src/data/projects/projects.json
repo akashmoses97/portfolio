@@ -1,0 +1,70 @@
+[
+  {
+    "title": "HireSight",
+    "subtitle": "Visual Analytics for Tech Job Search",
+    "period": "Jan - May 2026",
+    "description": "Deployed analytics product for tracking and improving tech job search outcomes.",
+    "outcome": "Resume parsing, role-fit guidance, Sankey flows, heatmaps, and trend views.",
+    "bullets": [
+      "LLM-powered recommendation engine for uploaded resume PDFs.",
+      "React frontend, FastAPI backend, Vercel and Render deployment."
+    ],
+    "tags": ["React 18", "D3.js", "FastAPI", "Pandas", "HuggingFace LLM API", "Python"],
+    "github": "https://github.com/akashmoses97",
+    "live": "https://hiresight.vercel.app",
+    "accent": "primary",
+    "visual": "funnel",
+    "featured": true
+  },
+  {
+    "title": "News Recommendation Atlas",
+    "subtitle": "Cold-Start Signal Study",
+    "period": "Jan - May 2026",
+    "description": "Recommendation experiment on MIND-small for cold-start user ranking.",
+    "outcome": "+13.8% MRR and +11.5% NDCG@10 for content signals on cold-start users.",
+    "bullets": [
+      "Combined FP-Growth, co-click graphs, TF-IDF, LDA, and logistic regression.",
+      "Evaluated 50K users and 156K impressions with reproducible metrics."
+    ],
+    "tags": ["Python", "scikit-learn", "NetworkX", "mlxtend", "LDA", "TF-IDF"],
+    "github": "https://github.com/akashmoses97",
+    "live": null,
+    "accent": "primary",
+    "visual": "ranking",
+    "featured": true
+  },
+  {
+    "title": "Cache Replacement Policy",
+    "subtitle": "PACIPV + RL-Based Study",
+    "period": "Graduate Research",
+    "description": "Cache replacement research using simulation and workload benchmarking.",
+    "outcome": "Compared miss-rate and IPC tradeoffs across workload patterns.",
+    "bullets": [
+      "Evaluated on SPEC CPU2006 and PARSEC benchmark suites across varying cache configurations.",
+      "Analyzed miss rate reduction, IPC improvements, and policy tradeoffs under different workload patterns."
+    ],
+    "tags": ["C++", "ZSim", "SPEC CPU2006", "PARSEC", "Reinforcement Learning"],
+    "github": "https://github.com/akashmoses97",
+    "live": null,
+    "accent": "neutral",
+    "visual": "research",
+    "featured": false
+  },
+  {
+    "title": "CUDA Cholesky Factorization",
+    "subtitle": "~76x GPU Speedup",
+    "period": "Graduate Research",
+    "description": "GPU implementation of dense linear algebra factorization.",
+    "outcome": "Achieved approximately 76x speedup over a sequential CPU baseline.",
+    "bullets": [
+      "Leveraged tiled matrix operations, shared memory, and optimized thread block configurations.",
+      "Benchmarked across matrix sizes demonstrating superlinear GPU acceleration for dense linear algebra."
+    ],
+    "tags": ["CUDA", "C++", "GPU Computing", "Linear Algebra", "Parallel Programming"],
+    "github": "https://github.com/akashmoses97",
+    "live": null,
+    "accent": "neutral",
+    "visual": "research",
+    "featured": false
+  }
+]

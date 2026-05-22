@@ -1,0 +1,27 @@
+{
+  "headline": "Backend engineer with security depth and delivery ownership.",
+  "cards": [
+    {
+      "title": "What I build",
+      "points": [
+        "Secure backend services for authentication, federation, and access governance.",
+        "Data migration pipelines with batching, encryption, reconciliation, and monitoring.",
+        "Internal platforms that reduce manual operational work for engineering teams."
+      ]
+    },
+    {
+      "title": "How I work",
+      "points": [
+        "Production-first: observability, rollout safety, and incident feedback loops.",
+        "Security-aware: OAuth2, OIDC, SAML, RBAC, secrets, and auditability.",
+        "Delivery-oriented: clear ownership from design through deployment."
+      ]
+    }
+  ],
+  "facts": [
+    { "icon": "briefcase", "label": "SDE II at JPMorgan Chase, 2020-2024" },
+    { "icon": "graduation", "label": "MS Computer Engineering, Texas A&M, May 2026" },
+    { "icon": "map", "label": "College Station, Texas, open to US roles on OPT" },
+    { "icon": "award", "label": "JPMC award winner and undergraduate gold medalist" }
+  ]
+}

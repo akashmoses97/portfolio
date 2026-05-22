@@ -1,0 +1,94 @@
+[
+  {
+    "title": "Software Engineer II",
+    "period": "Jan 2023 - Jul 2024",
+    "award": "Silent Runner Outstanding Contributor Award",
+    "summary": "Owned secure IAM platforms, migration tooling, and internal onboarding systems.",
+    "impact": [
+      { "value": "100K+", "label": "auth records migrated" },
+      { "value": "95%", "label": "ETL efficiency" },
+      { "value": "90%", "label": "manual onboarding reduced" }
+    ],
+    "outcomes": [
+      {
+        "label": "Migration engine",
+        "metric": "100K+ records",
+        "detail": "Built a multi-threaded Spring Boot ETL pipeline for encrypted Sybase/DB2 to AWS authentication migration."
+      },
+      {
+        "label": "Identity scale",
+        "metric": "99% availability",
+        "detail": "Scaled access control and federation microservices across multi-region, multi-datacenter environments."
+      },
+      {
+        "label": "Onboarding automation",
+        "metric": "90% reduction",
+        "detail": "Containerized a Spring Boot and React onboarding portal with Docker, Kubernetes, Jenkins, and monitoring."
+      },
+      {
+        "label": "Release safety",
+        "metric": "zero-downtime",
+        "detail": "Improved Oracle schema design, query performance, Liquibase releases, and blue-green deployment paths."
+      }
+    ],
+    "tags": ["Spring Boot", "AWS", "Kubernetes", "Docker", "LDAP", "Oracle", "Jenkins"]
+  },
+  {
+    "title": "Software Engineer I",
+    "period": "Aug 2020 - Dec 2022",
+    "award": "Extra Mile Team Award",
+    "summary": "Built enterprise dashboards, security APIs, governance workflows, and cloud modernization work.",
+    "impact": [
+      { "value": "10K", "label": "dashboard users" },
+      { "value": "500+", "label": "vulnerabilities fixed" },
+      { "value": "70%", "label": "production failures reduced" }
+    ],
+    "outcomes": [
+      {
+        "label": "Dashboard performance",
+        "metric": "60s to ms",
+        "detail": "Reduced enterprise dashboard load times using caching, prefetching, WebSockets, background loading, and JVM tuning."
+      },
+      {
+        "label": "Security APIs",
+        "metric": "OIDC/SAML",
+        "detail": "Implemented Spring Security APIs for RBAC, OTP, SCIM workflows, entitlement filters, and credential services."
+      },
+      {
+        "label": "Access governance",
+        "metric": "least privilege",
+        "detail": "Modernized authentication with Kerberos, CyberArk/KMS secret handling, account separation, and audit trails."
+      },
+      {
+        "label": "Modernization",
+        "metric": "500+ fixes",
+        "detail": "Drove Splunk root-cause analysis, Java 8 to 17 upgrades, Spring Boot upgrades, and on-prem to AWS migration work."
+      }
+    ],
+    "tags": ["Spring Security", "OAuth2", "OIDC", "SAML", "PingFederate", "CyberArk", "Splunk"]
+  },
+  {
+    "title": "Software Engineer Intern",
+    "period": "Jan 2020 - Jul 2020",
+    "award": null,
+    "summary": "Delivered migration proof-of-concept work and test coverage for reconciliation workflows.",
+    "impact": [
+      { "value": "90%", "label": "test coverage" },
+      { "value": "POC", "label": "migration tooling" },
+      { "value": "JUnit", "label": "test suite" }
+    ],
+    "outcomes": [
+      {
+        "label": "Migration POC",
+        "metric": "Python",
+        "detail": "Created a data migration proof of concept for authentication data movement and reconciliation."
+      },
+      {
+        "label": "Quality coverage",
+        "metric": "90%",
+        "detail": "Built unit and integration tests with JUnit and Mockito to improve debugging accuracy."
+      }
+    ],
+    "tags": ["Python", "JUnit", "Mockito", "Data Migration"]
+  }
+]

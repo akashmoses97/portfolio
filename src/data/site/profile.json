@@ -1,0 +1,22 @@
+{
+  "name": "Akash Moses Guttedar",
+  "initials": "AMG",
+  "role": "Senior Software Engineer",
+  "email": "moses.ak1997@gmail.com",
+  "phone": "(979) 344-4596",
+  "phoneHref": "tel:+19793444596",
+  "location": "College Station, Texas",
+  "availability": "Available for US-based SWE roles on OPT",
+  "availabilityShort": "Available May 2026",
+  "resumeHref": "/resume.pdf",
+  "github": {
+    "label": "GitHub",
+    "value": "github.com/akashmoses97",
+    "href": "https://github.com/akashmoses97"
+  },
+  "linkedin": {
+    "label": "LinkedIn",
+    "value": "linkedin.com/in/akash-moses",
+    "href": "https://linkedin.com/in/akash-moses"
+  }
+}

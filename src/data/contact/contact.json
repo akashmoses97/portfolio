@@ -1,0 +1,40 @@
+{
+  "headline": "Let's connect",
+  "status": "Open to opportunities, OPT, May 2026, College Station, TX",
+  "chips": ["Backend SWE", "US roles on OPT", "Available May 2026"],
+  "footerNote": {
+    "locationPrefix": "Based in",
+    "workAuthorization": "Authorized to work in the US on OPT",
+    "available": "Available May 2026"
+  },
+  "links": [
+    {
+      "icon": "mail",
+      "label": "Email",
+      "value": "moses.ak1997@gmail.com",
+      "href": "mailto:moses.ak1997@gmail.com",
+      "copyable": true
+    },
+    {
+      "icon": "linkedin",
+      "label": "LinkedIn",
+      "value": "linkedin.com/in/akash-moses",
+      "href": "https://linkedin.com/in/akash-moses",
+      "copyable": false
+    },
+    {
+      "icon": "github",
+      "label": "GitHub",
+      "value": "github.com/akashmoses97",
+      "href": "https://github.com/akashmoses97",
+      "copyable": false
+    },
+    {
+      "icon": "phone",
+      "label": "Phone",
+      "value": "(979) 344-4596",
+      "href": "tel:+19793444596",
+      "copyable": true
+    }
+  ]
+}
