@@ -24,6 +24,18 @@ interface ToolMarkProps {
 type ImgState = "local" | "cdn" | "initials";
 
 export default function ToolMark({ logo, name, slug, index = 0 }: ToolMarkProps) {
+  return (
+    <ToolMarkImage
+      key={`${logo}:${slug ?? ""}`}
+      logo={logo}
+      name={name}
+      slug={slug}
+      index={index}
+    />
+  );
+}
+
+function ToolMarkImage({ logo, name, slug, index = 0 }: ToolMarkProps) {
   const localSrc = `/logos/skills/${logo}.svg`;
   const cdnSrc = slug ? `${CDN}/${slug}` : null;
 
@@ -43,12 +55,6 @@ export default function ToolMark({ logo, name, slug, index = 0 }: ToolMarkProps)
       setReady(false);
     }
   }
-
-  // Catch images already loaded from cache before onLoad fires
-  useEffect(() => {
-    setImgState("local");
-    setReady(false);
-  }, [logo, slug]);
 
   useEffect(() => {
     if (src && imgRef.current?.complete && imgRef.current.naturalWidth > 0) {

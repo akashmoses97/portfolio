@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LLM APIs">
+  <rect width="64" height="64" rx="14" fill="#9333ea"/>
+  <path d="M20 19h24a7 7 0 0 1 7 7v9a7 7 0 0 1-7 7H32l-10 8v-8h-2a7 7 0 0 1-7-7v-9a7 7 0 0 1 7-7Z" fill="#fff"/>
+  <path d="M24 31h16" stroke="#9333ea" stroke-width="4" stroke-linecap="round"/>
+</svg>
