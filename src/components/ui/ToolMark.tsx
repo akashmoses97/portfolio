@@ -21,17 +21,40 @@ interface ToolMarkProps {
   index?: number;
 }
 
+type ImgState = "local" | "cdn" | "initials";
+
 export default function ToolMark({ logo, name, slug, index = 0 }: ToolMarkProps) {
+  const localSrc = `/logos/skills/${logo}.svg`;
+  const cdnSrc = slug ? `${CDN}/${slug}` : null;
+
+  const initial: ImgState = "local";
+  const [imgState, setImgState] = useState<ImgState>(initial);
   const [ready, setReady] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
-  // Catch images that loaded from cache before onLoad fires
+  const src = imgState === "local" ? localSrc : imgState === "cdn" ? cdnSrc : null;
+
+  function handleError() {
+    if (imgState === "local" && cdnSrc) {
+      setImgState("cdn");
+      setReady(false);
+    } else {
+      setImgState("initials");
+      setReady(false);
+    }
+  }
+
+  // Catch images already loaded from cache before onLoad fires
   useEffect(() => {
-    if (!slug) return;
-    if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
+    setImgState("local");
+    setReady(false);
+  }, [logo, slug]);
+
+  useEffect(() => {
+    if (src && imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
       setReady(true);
     }
-  }, [slug]);
+  }, [src]);
 
   const initials = logo.length <= 5 ? logo.toUpperCase() : name.slice(0, 2).toUpperCase();
 
@@ -41,17 +64,16 @@ export default function ToolMark({ logo, name, slug, index = 0 }: ToolMarkProps)
       aria-hidden="true"
       title={name}
     >
-      {/* Official logo */}
-      {slug && (
+      {src && (
         <img
           ref={imgRef}
-          src={`${CDN}/${slug}`}
+          src={src}
           alt=""
           width={18}
           height={18}
           className={`absolute inset-0 m-auto h-[18px] w-[18px] rounded-[3px] object-contain p-[1px] transition-opacity duration-150 ${ready ? "opacity-100" : "opacity-0"}`}
           onLoad={() => setReady(true)}
-          onError={() => setReady(false)}
+          onError={handleError}
         />
       )}
 

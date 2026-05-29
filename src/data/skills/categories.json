@@ -47,8 +47,8 @@
       { "name": "Oracle DB",       "logo": "ora" },
       { "name": "PostgreSQL",      "logo": "pg",     "slug": "postgresql" },
       { "name": "MySQL",           "logo": "my",     "slug": "mysql" },
-      { "name": "Amazon Aurora",   "logo": "aur",    "slug": "amazonwebservices" },
-      { "name": "IBM DB2",         "logo": "db2",    "slug": "ibm" },
+      { "name": "Amazon Aurora",   "logo": "aur" },
+      { "name": "IBM DB2",         "logo": "db2" },
       { "name": "Sybase",          "logo": "syb" },
       { "name": "ADLDS",           "logo": "ad" }
     ]
@@ -62,10 +62,10 @@
       { "name": "SAML / SSO",         "logo": "saml" },
       { "name": "RBAC",               "logo": "rbac" },
       { "name": "PingFederate",        "logo": "ping" },
-      { "name": "ADFS",               "logo": "adfs",    "slug": "microsoftazure" },
+      { "name": "ADFS",               "logo": "adfs" },
       { "name": "Transmit Security",  "logo": "tsec" },
       { "name": "CyberArk",           "logo": "cark" },
-      { "name": "KMS / Secrets",      "logo": "kms",     "slug": "amazonwebservices" }
+      { "name": "KMS / Secrets",      "logo": "kms" }
     ]
   },
   {
@@ -86,7 +86,7 @@
       { "name": "Splunk",      "logo": "spl",   "slug": "splunk" },
       { "name": "AppDynamics", "logo": "appd",  "slug": "appdynamics" },
       { "name": "Snyk",        "logo": "snyk",  "slug": "snyk" },
-      { "name": "SonarQube",   "logo": "sonar", "slug": "sonarqube" },
+      { "name": "SonarQube",   "logo": "sonar", "slug": "sonar" },
       { "name": "JUnit",       "logo": "junit", "slug": "junit5" },
       { "name": "Mockito",     "logo": "mck" },
       { "name": "Git",         "logo": "git",   "slug": "git" },

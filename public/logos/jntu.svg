@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- JNTU Hyderabad — navy background with torch / initials mark -->
+  <rect width="100" height="100" fill="#1e3a8a"/>
+  <!-- Torch flame (stylised academic symbol) -->
+  <path d="M50,14 C44,20 40,28 43,35 C39,30 38,22 42,16
+           C36,26 35,40 44,46 C41,38 44,30 50,26
+           C56,30 59,38 56,46 C65,40 64,26 58,16
+           C62,22 61,30 57,35 C60,28 56,20 50,14 Z"
+        fill="white" opacity="0.95"/>
+  <!-- Torch handle -->
+  <rect x="46" y="44" width="8" height="18" rx="2" fill="white"/>
+  <!-- Base platform -->
+  <rect x="38" y="62" width="24" height="5" rx="2" fill="white"/>
+  <!-- Divider line -->
+  <line x1="22" y1="73" x2="78" y2="73" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+  <!-- JNTU text -->
+  <text x="50" y="87" text-anchor="middle"
+        fill="rgba(255,255,255,0.85)"
+        font-family="Arial,Helvetica,sans-serif"
+        font-weight="700" font-size="11" letter-spacing="2.5">JNTU</text>
+</svg>
