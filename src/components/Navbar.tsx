@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import PersonalLogo from "@/components/ui/PersonalLogo";
 import links from "@/data/navigation/links.json";
 import profile from "@/data/site/profile.json";
 
@@ -39,9 +40,9 @@ export default function Navbar() {
           <a
             href="#"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-            className="font-heading font-800 text-lg tracking-tight"
+            className="rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/30"
           >
-            <span className="gradient-accent">{profile.initials}</span>
+            <PersonalLogo text={profile.initials} />
           </a>
 
           {/* Desktop nav */}

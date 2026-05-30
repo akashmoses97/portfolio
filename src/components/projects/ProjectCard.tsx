@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/ui/icons";
 import ProjectVisual from "@/components/projects/ProjectVisual";
 
@@ -34,11 +34,9 @@ const accentClass = {
 export default function ProjectCard({
   project,
   index,
-  large,
 }: {
   project: Project;
   index: number;
-  large: boolean;
 }) {
   const accent = accentClass[project.accent];
 
@@ -48,87 +46,108 @@ export default function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.55, delay: index * 0.08 }}
-      className="group card-border bg-surface rounded-lg overflow-hidden flex flex-col"
+      className="group card-border grid overflow-hidden rounded-xl bg-surface lg:grid-cols-[minmax(280px,0.42fr)_1fr]"
     >
-      <div className={`h-1.5 w-full ${accent.bar}`} />
+      <div className={`h-1.5 ${accent.bar} lg:hidden`} />
 
-      <div className="flex-1 p-6 flex flex-col gap-5">
+      <div className="relative border-b border-border bg-elevated/60 p-5 lg:border-b-0 lg:border-r lg:p-6">
+        <div className={`absolute left-0 top-0 hidden h-full w-1.5 ${accent.bar} lg:block`} />
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <span className="rounded-full border border-border bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted">
+            {project.featured ? "Featured" : "Project"}
+          </span>
+          <span className="text-sm font-semibold text-subtle">{project.period}</span>
+        </div>
+        <ProjectVisual title={project.title} visual={project.visual} accent={project.accent} />
+      </div>
+
+      <div className="flex flex-col gap-5 p-5 md:p-6 lg:p-7">
         <div className="flex items-start justify-between gap-3">
-          <div>
+          <div className="min-w-0">
             <div className="mb-2 flex items-center gap-2">
               <span
-                className="h-2.5 w-2.5 flex-shrink-0 rounded-full"
+                className="h-3 w-3 flex-shrink-0 rounded-full"
                 style={{ backgroundColor: accent.dot }}
               />
-              <h3 className="font-heading text-2xl font-bold leading-tight text-text">
+              <h3 className="font-heading text-2xl font-bold leading-tight text-text md:text-3xl">
                 {project.title}
               </h3>
             </div>
-            <p className="text-sm font-medium text-muted">
-              {project.subtitle} · {project.period}
+            <p className="text-base font-semibold text-muted">
+              {project.subtitle}
             </p>
           </div>
 
-          <div className="flex items-center gap-2 flex-shrink-0">
+          <div className="flex flex-shrink-0 items-center gap-2">
             {project.live && (
               <a
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-1.5 rounded-lg border border-border text-muted hover:text-accent hover:border-accent/40 transition-all"
+                className="rounded-lg border border-border p-2 text-muted transition-all hover:border-accent/40 hover:text-accent"
                 aria-label="Live demo"
               >
-                <ExternalLink size={14} />
+                <ExternalLink size={16} />
               </a>
             )}
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 rounded-lg border border-border text-muted hover:text-text hover:border-border-bright transition-all"
+              className="rounded-lg border border-border p-2 text-muted transition-all hover:border-border-bright hover:text-text"
               aria-label="GitHub"
             >
-              <GithubIcon size={14} />
+              <GithubIcon size={16} />
             </a>
           </div>
         </div>
 
-        <ProjectVisual title={project.title} visual={project.visual} />
-
-        <div>
-          <p className="text-base font-semibold leading-relaxed text-text">{project.description}</p>
-          <p className="mt-3 rounded-lg border border-accent/20 bg-accent/[0.06] px-4 py-3 text-sm font-semibold leading-relaxed text-accent">
-            {project.outcome}
+        <div className="grid gap-4 md:grid-cols-[1fr_minmax(220px,0.45fr)]">
+          <p className="text-base font-semibold leading-relaxed text-text md:text-lg">
+            {project.description}
           </p>
+          <div className="border-l-4 border-accent bg-accent/[0.06] px-4 py-3 text-sm font-semibold leading-relaxed text-accent">
+            {project.outcome}
+          </div>
         </div>
 
-        {large && (
-          <div className="grid gap-2">
-            {project.bullets.map((bullet) => (
-              <div
-                key={bullet}
-                className="flex gap-2.5 rounded-lg border border-border bg-bg px-3 py-2 text-xs leading-relaxed text-muted"
-              >
-                <span
-                  className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
-                  style={{ backgroundColor: accent.dot }}
-                />
-                {bullet}
-              </div>
-            ))}
-          </div>
-        )}
+        <div className="grid gap-3 md:grid-cols-2">
+          {project.bullets.map((bullet) => (
+            <div key={bullet} className="flex gap-3 text-sm leading-relaxed text-muted">
+              <ArrowUpRight
+                size={16}
+                className="mt-0.5 flex-shrink-0 text-accent"
+                aria-hidden="true"
+              />
+              <span>{bullet}</span>
+            </div>
+          ))}
+        </div>
 
-        <div className="flex flex-wrap gap-1.5 mt-auto pt-2">
+        <div className="mt-auto flex flex-wrap gap-2 border-t border-border pt-4">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 rounded-lg text-xs font-medium text-muted bg-elevated border border-border"
+              className="rounded-lg border border-border bg-elevated px-3 py-1.5 text-xs font-semibold text-muted"
             >
               {tag}
             </span>
           ))}
         </div>
+
+        {project.live && (
+          <div className="flex">
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-bold text-accent transition-colors hover:text-accent-light"
+            >
+              View live project
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          </div>
+        )}
       </div>
     </motion.div>
   );

@@ -66,7 +66,7 @@ function ToolMarkImage({ logo, name, slug, index = 0 }: ToolMarkProps) {
 
   return (
     <span
-      className="relative flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center rounded-md"
+      className="relative flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg"
       aria-hidden="true"
       title={name}
     >
@@ -75,9 +75,9 @@ function ToolMarkImage({ logo, name, slug, index = 0 }: ToolMarkProps) {
           ref={imgRef}
           src={src}
           alt=""
-          width={18}
-          height={18}
-          className={`absolute inset-0 m-auto h-[18px] w-[18px] rounded-[3px] object-contain p-[1px] transition-opacity duration-150 ${ready ? "opacity-100" : "opacity-0"}`}
+          width={26}
+          height={26}
+          className={`absolute inset-0 m-auto h-[26px] w-[26px] rounded-[4px] object-contain p-[1px] transition-opacity duration-150 ${ready ? "opacity-100" : "opacity-0"}`}
           onLoad={() => setReady(true)}
           onError={handleError}
         />
@@ -85,7 +85,7 @@ function ToolMarkImage({ logo, name, slug, index = 0 }: ToolMarkProps) {
 
       {/* Initials — shown until logo is ready */}
       <span
-        className={`flex h-full w-full items-center justify-center rounded-md border text-[9px] font-black tracking-tight transition-opacity duration-150 ${palette[index % palette.length]} ${ready ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+        className={`flex h-full w-full items-center justify-center rounded-lg border text-[10px] font-black transition-opacity duration-150 ${palette[index % palette.length]} ${ready ? "opacity-0 pointer-events-none" : "opacity-100"}`}
       >
         {initials}
       </span>

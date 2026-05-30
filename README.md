@@ -29,7 +29,8 @@ npm run dev
 
 ## Resume
 
-Place your resume PDF at `public/resume.pdf` — the navbar "Resume ↗" button links to it.
+The navbar "Resume ↗" button links directly to `Akash_Moses_Resume.pdf` in Google Drive:
+`https://drive.google.com/file/d/1LR9omqvzKviP5RzaekWy3geGJVYo8nK9/view?usp=sharing`
 
 ## Sections
 

@@ -8,13 +8,13 @@ import content from "@/data/skills/content.json";
 import labels from "@/data/sections/labels.json";
 
 const categoryIcons = {
-  code:     <Code2 size={15} />,
-  layers:   <Layers size={15} />,
-  cloud:    <Cloud size={15} />,
-  database: <Database size={15} />,
-  shield:   <Shield size={15} />,
-  cpu:      <Cpu size={15} />,
-  activity: <Activity size={15} />,
+  code:     <Code2 size={20} />,
+  layers:   <Layers size={20} />,
+  cloud:    <Cloud size={20} />,
+  database: <Database size={20} />,
+  shield:   <Shield size={20} />,
+  cpu:      <Cpu size={20} />,
+  activity: <Activity size={20} />,
 } as const;
 
 type Skill = {
@@ -26,7 +26,7 @@ type Skill = {
 export default function Skills() {
   return (
     <section id="skills" className="py-28 md:py-36 bg-surface/30">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
         <motion.div
@@ -42,8 +42,8 @@ export default function Skills() {
           </h2>
         </motion.div>
 
-        {/* Category grid — 3 columns on lg */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Category rows */}
+        <div className="space-y-5">
           {categories.map((cat, ci) => (
             <motion.div
               key={cat.label}
@@ -51,20 +51,18 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: ci * 0.07 }}
-              className="card-border bg-surface rounded-xl overflow-hidden"
+              className="card-border grid gap-5 rounded-xl border border-border bg-surface p-5 md:grid-cols-[230px_1fr] md:items-start md:p-6"
             >
-              {/* Category header */}
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-elevated/60">
-                <span className="text-accent">
+              <div className="flex items-center gap-3 md:pt-2">
+                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg border border-border bg-elevated text-accent">
                   {categoryIcons[cat.icon as keyof typeof categoryIcons]}
                 </span>
-                <span className="font-heading font-semibold text-xs uppercase tracking-widest text-text/80">
+                <span className="font-heading text-sm font-semibold uppercase tracking-widest text-text/80">
                   {cat.label}
                 </span>
               </div>
 
-              {/* Skill pills — wrapping flex */}
-              <div className="p-4 flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {(cat.skills as Skill[]).map((skill, si) => (
                   <motion.div
                     key={skill.name}
@@ -72,7 +70,7 @@ export default function Skills() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.25, delay: ci * 0.06 + si * 0.025 }}
-                    className="skill-pill flex items-center gap-2 rounded-lg border border-border bg-elevated/80 hover:bg-elevated hover:border-border-bright px-2.5 py-1.5 text-xs font-medium text-muted transition-all"
+                    className="skill-pill flex min-h-12 items-center gap-3 rounded-lg border border-border bg-elevated/80 px-3.5 py-2.5 text-sm font-semibold text-muted transition-all hover:border-border-bright hover:bg-elevated"
                   >
                     <ToolMark
                       logo={skill.logo}

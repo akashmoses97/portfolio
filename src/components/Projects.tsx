@@ -9,12 +9,9 @@ import labels from "@/data/sections/labels.json";
 const projects = projectsData as Project[];
 
 export default function Projects() {
-  const featured = projects.filter((project) => project.featured);
-  const rest = projects.filter((project) => !project.featured);
-
   return (
     <section id="projects" className="py-24 md:py-32">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,20 +25,9 @@ export default function Projects() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          {featured.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} large />
-          ))}
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {rest.map((project, index) => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              index={index + featured.length}
-              large={false}
-            />
+        <div className="space-y-6">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
       </div>
